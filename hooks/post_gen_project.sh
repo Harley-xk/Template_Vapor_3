@@ -9,7 +9,7 @@ LIGHTCYAN='\033[0;96m'
 
 echo -e "${GREEN}All files successfuly generated!"
 
-echo -e "${CYAN}Updating Dependencies...${DEFAULT}"
+echo -e "${CYAN}Fetching Dependencies:${DEFAULT}"
 
 vapor update --verbose
 
