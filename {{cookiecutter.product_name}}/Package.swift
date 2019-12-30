@@ -2,9 +2,9 @@
 import PackageDescription
 
 let package = Package(
-    name: "cookiecutter.product_name",
+    name: "{{cookiecutter.product_name}}",
     products: [
-        .library(name: "cookiecutter.product_name", targets: ["App"]),
+        .library(name: "{{cookiecutter.product_name}}", targets: ["App"]),
     ],
     dependencies: [
         // 💧 A server-side Swift web framework.
