@@ -1,0 +1,13 @@
+{
+    "host": {
+        "name": "0.0.0.0",
+        "port": 8000
+    },
+    "database": {
+        "name": "{{cookiecutter.product_name}}",
+        "host": "0.0.0.0",
+        "port": 8889,
+        "username": "root",
+        "password": "root"
+    }
+}
