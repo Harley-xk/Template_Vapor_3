@@ -7,6 +7,15 @@ public func app(_ env: Environment) throws -> Application {
     var services = Services.default()
     try configure(&config, &env, &services)
     let app = try Application(config: config, environment: env, services: services)
+    _mainApplication = app
     try boot(app)
     return app
+}
+
+fileprivate var _mainApplication: Application!
+
+extension Application {
+    static var main: Application {
+        return _mainApplication
+    }
 }
