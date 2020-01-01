@@ -49,7 +49,11 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     
     /// Create default content config
     var contentConfig = ContentConfig.default()
-    contentConfig.use(encoder: JSONEncoder(), for: .json)
-    contentConfig.use(decoder: JSONDecoder(), for: .json)
+    let encoder = JSONEncoder()
+    encoder.dateEncodingStrategy = .secondsSince1970
+    contentConfig.use(encoder: encoder, for: .json)
+    let decoder = JSONDecoder()
+    decoder.dateDecodingStrategy = .secondsSince1970
+    contentConfig.use(decoder: decoder, for: .json)
     services.register(contentConfig)
 }
